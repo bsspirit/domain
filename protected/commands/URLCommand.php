@@ -7,7 +7,7 @@ class URLCommand extends CConsoleCommand {
 	
 	public function actionGetURL() {//获取URL地址
 		//var_dump('start:'.memory_get_usage()); 
-		$urls = $this->getURL(100,901000);
+		$urls = $this->getURL(100,1000);
 		//var_dump('urls:'.memory_get_usage()); 
 		
 		foreach($urls as $url){
@@ -49,7 +49,7 @@ class URLCommand extends CConsoleCommand {
 	}
 	
 	private function writeFile($name,$data){
-		$f = fopen(".././metadata/data/".$name.".txt", "w");
+		$f = fopen("../metadata/data/".$name.".txt", "w");
 		fwrite($f, $data);
 		fclose($f);
 	}
