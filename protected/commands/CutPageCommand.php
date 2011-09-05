@@ -3,7 +3,7 @@
 class CutPageCommand extends CConsoleCommand {
 	
 	public function run() {
-		$domains = $this->getDomains (102);
+		$domains = $this->getDomains (165);
 		foreach ( $domains as $domain ) {
 			try{
 				$this->outputImage ( $domain );
