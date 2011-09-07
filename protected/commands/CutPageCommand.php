@@ -3,7 +3,7 @@
 class CutPageCommand extends CConsoleCommand {
 	
 	public function run() {
-		$domains = $this->getDomains (165);
+		$domains = $this->getDomains ();
 		foreach ( $domains as $domain ) {
 			try{
 				$this->outputImage ( $domain );
@@ -21,7 +21,7 @@ class CutPageCommand extends CConsoleCommand {
 		$browser->FullScreen = true;
 		
 		$url = "http://www." . $domain;
-		$file = "../metadata/screen/1000/" . $domain . ".png";
+		$file = "../metadata/screen/test/" . $domain . ".png";
 		echo $url . "\n";
 		
 		$browser->Navigate ( $url );
@@ -48,11 +48,13 @@ class CutPageCommand extends CConsoleCommand {
 		
 		$i=0;
 		while ( ! feof ( $file_handle ) ) {
-			$line = fgets ( $file_handle );
+			$line = fgets ( $file_handle );		
+			
 			$i++;
-			if($i<$start) continue;
+			if($i<$start) {continue;}			
 			
 			$name = substr ( $line, strpos ( $line, ',' ) + 1, -1 );
+			echo "N:".$name;
 			if(!empty($name)){
 				array_push ( $domains, $name );
 			}
