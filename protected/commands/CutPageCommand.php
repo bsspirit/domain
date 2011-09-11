@@ -3,11 +3,7 @@
 class CutPageCommand extends CConsoleCommand {
 	
 	public function run() {
-<<<<<<< HEAD
 		$domains = $this->getDomains (106);//2,612
-=======
-		$domains = $this->getDomains ();
->>>>>>> 0dd112c6f098f77f9319d84a89f404c4ec3d75d5
 		foreach ( $domains as $domain ) {
 			try{
 				$this->outputImage ( $domain );
@@ -25,11 +21,7 @@ class CutPageCommand extends CConsoleCommand {
 		$browser->FullScreen = true;
 		
 		$url = "http://www." . $domain;
-<<<<<<< HEAD
 		$file = "../metadata/screen/3000/" . $domain . ".png";
-=======
-		$file = "../metadata/screen/test/" . $domain . ".png";
->>>>>>> 0dd112c6f098f77f9319d84a89f404c4ec3d75d5
 		echo $url . "\n";
 		
 		$browser->Navigate ( $url );
@@ -59,13 +51,7 @@ class CutPageCommand extends CConsoleCommand {
 			$line = fgets ( $file_handle );		
 			
 			$i++;
-<<<<<<< HEAD
-			if($i<$start) continue;
-
-=======
 			if($i<$start) {continue;}			
-			
->>>>>>> 0dd112c6f098f77f9319d84a89f404c4ec3d75d5
 			$name = substr ( $line, strpos ( $line, ',' ) + 1, -1 );
 			echo "N:".$name;
 			if(!empty($name)){
