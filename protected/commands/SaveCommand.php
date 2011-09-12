@@ -1,9 +1,10 @@
 <?php
 
+require_once 'simple_html_dom.php';
+
 class SaveCommand extends CConsoleCommand {
 
 	public function actionDomain() {
-		
 		$files = $this->getFiles();
 		foreach($files as $file){
 			var_dump ( 'start:' . memory_get_usage () );
@@ -19,6 +20,18 @@ class SaveCommand extends CConsoleCommand {
 			var_dump ( 'end:' . memory_get_usage () );
 		}
 	}
+	
+//	public function actionHeader(){
+//		$url = 'http://article.denniswave.com/1082';//'http://www.google.com';
+//		$html = file_get_html($url);
+//		$metas = $html->find('title');
+//		foreach($metas as $meta){
+//			echo $meta;
+//		}
+//		
+//		
+//		$this->saveHeader($domain,$title,$charset,$keywords,$description,$icon,$lang)
+//	}
 
 	private function getFiles(){
 		$files = array();
@@ -67,5 +80,18 @@ class SaveCommand extends CConsoleCommand {
 		$model->grade = $grade;
 		$model->save(false);
 	}
+	
+	private function saveHeader($domain,$title,$charset,$keywords,$description,$icon,$lang){
+		$model=new Header;
+		$model->domain = $domain;
+		$model->title = $title;
+		$model->charset = $charset;
+		$model->keywords = $keywords;
+		$model->description = $description;
+		$model->icon = $icon;
+		$model->lang = $lang;
+		$model->save(false);
+	}
+	
 
 }
