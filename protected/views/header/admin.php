@@ -44,9 +44,15 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'domain',
+		'title',
+		'lang',
+		'charset',
+		'icon',
+		/*
 		'keywords',
 		'description',
 		'create_time',
+		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

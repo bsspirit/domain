@@ -16,13 +16,33 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'title'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>512)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'lang'); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'charset'); ?>
+		<?php echo $form->textField($model,'charset',array('size'=>60,'maxlength'=>64)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'icon'); ?>
+		<?php echo $form->textField($model,'icon',array('size'=>60,'maxlength'=>256)); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'keywords'); ?>
-		<?php echo $form->textField($model,'keywords'); ?>
+		<?php echo $form->textField($model,'keywords',array('size'=>60,'maxlength'=>512)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'description'); ?>
-		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>512)); ?>
 	</div>
 
 	<div class="row">

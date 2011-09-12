@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Headers'=>array('index'),
-	$model->id,
+	$model->title,
 );
 
 $this->menu=array(
@@ -20,6 +20,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'domain',
+		'title',
+		'lang',
+		'charset',
+		'icon',
 		'keywords',
 		'description',
 		'create_time',

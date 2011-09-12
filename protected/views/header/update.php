@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Headers'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
+	$model->title=>array('view','id'=>$model->id),
 	'Update',
 );
 
