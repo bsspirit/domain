@@ -88,6 +88,7 @@ class Domain extends CActiveRecord
 		$criteria->compare('grade',$this->grade);
 		$criteria->compare('image',$this->image,true);
 		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->order = 'grade asc';
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

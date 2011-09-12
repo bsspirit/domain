@@ -11,6 +11,8 @@ CREATE TABLE t_domain(
 	create_time TIMESTAMP default now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+create index idx_grade on t_domain(grade);
+
 CREATE TABLE t_header(
 	id int primary key auto_increment,
 	domain varchar(128) not null unique,
