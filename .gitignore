@@ -2,6 +2,7 @@
 .project
 .settings/*
 assets/*
+metadata/screen/*
 *.log
 **/*.log
 **/**/*.log

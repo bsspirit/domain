@@ -2,40 +2,44 @@
 
 class SaveCommand extends CConsoleCommand {
 	
-	public function actionDomain(){
-		$domain = $this->getDomains();
-		foreach($domain as $d){
-			$arr = explode(',',$d);
-			echo $arr[0].':'.$arr[1];
-		}
-		
-		
-//		$model=new Domain;
-//		$model->domain = '';
-//		$model->image = '';
-//		$model->grade = 0;
-//		$model->save();
+	public function actionDomain() {
+		$domain = $this->getDomains ();
+//		foreach ( $domain as $d ) {
+//			$arr = explode ( ',', $d );
+//			echo $arr [0] . ':' . $arr [1] . "\n";
+//			
+////			$this->saveDomain($arr [1],$arr [0],$arr [1]);
+//		}
+//		$this->saveDomain('21212',111,'12121');
+		$this->saveDomain();
 	}
 	
-	private function getDomains($start=1) {
-		$domains = array ();//array ("google.com","baidu.com");
+	public function saveDomain(){
+		$model=new Domain;
+////		$model->domain = $domain;
+////		$model->image = $image;
+////		$model->grade = $grade;
+////		$model->save(false);
+	}
+	
+	private function getDomains($start = 1) {
+		$domains = array ();
 		$file_handle = fopen ( "../metadata/data/100000/1000.txt", "r" );
 		
-		$i=0;
+		$i = 0;
 		while ( ! feof ( $file_handle ) ) {
-			$line = fgets ( $file_handle );		
+			$line = fgets ( $file_handle );
 			
-			$i++;
-			if($i<$start) {continue;}			
+			$i ++;
+			if (empty ( $line ) || $i < $start) {
+				continue;
+			}
 			
-//			$name = substr ( $line, strpos ( $line, ',' ) + 1, -1 );
-//			if(!empty($name)){
-//				array_push ( $domains, $name );
-//			}
+			$line = substr ( $line, 0, - 1 );
 			array_push ( $domains, $line );
 		}
 		fclose ( $file_handle );
 		return $domains;
 	}
-	
+
 }
