@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/
+Disallow: /
 
-Sitemap: http://www.ac-999.com/sitemap.xml
 

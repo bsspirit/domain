@@ -24,3 +24,9 @@ CREATE TABLE t_header(
 	description varchar(512) null,
 	create_time TIMESTAMP default now()
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE t_tianji_user_json(
+	userid bigint primary key,
+	json varchar(2048) null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

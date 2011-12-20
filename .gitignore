@@ -3,6 +3,8 @@
 .settings/*
 assets/*
 metadata/screen/*
+metadata/data/*
+protected/runtime/*
 *.log
 **/*.log
 **/**/*.log
